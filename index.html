@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Vice City Fan Hub</title>
+
+    <link rel="stylesheet" href="./output.css" />
+    <link rel="stylesheet" href="./input.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body class="bg-[#070312] text-white">
+    <!-- LOADING SCREEN -->
+    <div id="loader">
+      <div class="loader-content">
+        <i class="fa-solid fa-tree"></i>
+        <h2>VICE CITY</h2>
+        <p>ENTERING THE CITY...</p>
+        <div class="loader-bar">
+          <div class="loader-progress"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="site-navbar bg-[#090416]/70 border-b border-fuchsia-500/30">
+      <nav class="navbar max-w-7xl mx-auto px-5 h-16">
+        <!-- LOGO -->
+        <a href="#home" class="flex items-center gap-2">
+          <i class="fa-solid fa-tree text-3xl text-fuchsia-500"></i>
+
+          <div>
+            <h1 class="text-2xl font-bold italic text-fuchsia-400">
+              Vice City
+            </h1>
+            <p class="text-[9px] tracking-[4px] text-center">𝙁𝘼𝙉 𝙃𝙐𝘽</p>
+          </div>
+        </a>
+
+        <!-- DESKTOP NAVIGATION -->
+        <div class="desktop-navigation">
+          <a href="#home" class="nav-link">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </a>
+
+          <a href="#characters" class="nav-link">
+            <i class="fa-solid fa-users"></i>
+            <span>Cast</span>
+          </a>
+
+          <a href="#tools" class="nav-link">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <span>Tools</span>
+          </a>
+        </div>
+
+        <!-- MOBILE BUTTON -->
+        <button
+          id="menu-btn"
+          class="mobile-menu-button text-3xl text-fuchsia-400"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          type="button"
+        >
+          ☰
+        </button>
+      </nav>
+
+      <!-- MOBILE LINKS -->
+      <div id="mobile-menu" class="hidden px-5 pb-4 space-y-3">
+        <a href="#home" class="block">Home</a>
+        <a href="#characters" class="block">Cast</a>
+        <a href="#tools" class="block">Tools</a>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section
+      id="home"
+      class="hero-section relative flex items-center justify-center text-center px-5"
+    >
+      <!-- DARK OVERLAY -->
+      <div class="hero-overlay absolute inset-0"></div>
+
+      <!-- HERO CONTENT -->
+      <div class="relative z-10 max-w-4xl mx-auto py-20">
+        <p class="text-fuchsia-400 uppercase tracking-[5px] text-sm mb-5">
+          𝐓𝐡𝐞 𝐔𝐥𝐭𝐢𝐦𝐚𝐭𝐞 𝐅𝐚𝐧 𝐄𝐱𝐩𝐞𝐫𝐢𝐞𝐧𝐜𝐞
+        </p>
+
+        <h1 class="text-5xl md:text-7xl font-extrabold uppercase mb-6">
+          𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤
+
+          <span class="block text-fuchsia-400"> 𝙑𝙞𝙘𝙚 𝘾𝙞𝙩𝙮 </span>
+        </h1>
+
+        <p class="text-gray-300 text-base md:text-xl max-w-2xl mx-auto mb-10">
+          𝐄𝐱𝐩𝐥𝐨𝐫𝐞 𝐭𝐡𝐞 𝐧𝐞𝐨𝐧 𝐬𝐭𝐫𝐞𝐞𝐭𝐬, 𝐝𝐢𝐬𝐜𝐨𝐯𝐞𝐫 𝐨𝐫𝐢𝐠𝐢𝐧𝐚𝐥 𝐜𝐡𝐚𝐫𝐚𝐜𝐭𝐞𝐫𝐬 𝐚𝐧𝐝 𝐞𝐱𝐩𝐞𝐫𝐢𝐞𝐧𝐜𝐞
+          𝐭𝐡𝐞 𝐜𝐢𝐭𝐲 𝐭𝐡𝐚𝐭 𝐧𝐞𝐯𝐞𝐫 𝐬𝐥𝐞𝐞𝐩𝐬.
+        </p>
+
+        <!-- COUNTDOWN -->
+        <div class="mb-10">
+          <p class="text-cyan-300 tracking-[4px] text-sm mb-5">
+            𝐋𝐀𝐔𝐍𝐂𝐇 𝐂𝐎𝐔𝐍𝐓𝐃𝐎𝐖𝐍
+          </p>
+
+          <div class="flex justify-center gap-4 md:gap-8">
+            <div class="count-box">
+              <span id="days">00</span>
+              <p>Days</p>
+            </div>
+
+            <div class="count-box">
+              <span id="hours">00</span>
+              <p>Hours</p>
+            </div>
+
+            <div class="count-box">
+              <span id="minutes">00</span>
+              <p>Minutes</p>
+            </div>
+
+            <div class="count-box">
+              <span id="seconds">00</span>
+              <p>Seconds</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BUTTON -->
+        <a href="#tools" class="hero-btn">
+          Explore Tools
+
+          <i class="fa-solid fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- CHARACTERS SECTION -->
+    <section id="characters" class="characters-section">
+      <!-- SECTION HEADING -->
+      <div class="text-center mb-10">
+        <h2>CHARACTERS</h2>
+
+        <p>𝐌𝐞𝐞𝐭 𝐭𝐡𝐞 𝐩𝐞𝐫𝐬𝐨𝐧𝐚𝐥𝐢𝐭𝐢𝐞𝐬 𝐬𝐡𝐚𝐩𝐢𝐧𝐠 𝐭𝐡𝐞 𝐬𝐭𝐨𝐫𝐲</p>
+      </div>
+
+      <!-- CHARACTER GRID -->
+      <div class="character-container">
+        <!-- CHARACTER 1 -->
+        <div class="character-card">
+          <div class="character-image">
+            <img
+              src="./images/alex-vega.png"
+              alt="Alex Vega - The Strategist"
+            />
+          </div>
+
+          <div class="character-info">
+            <h3>Alex Vega</h3>
+
+            <p>A man with a plan and a mysterious past.</p>
+
+            <details class="character-details">
+              <summary>Learn More →</summary>
+
+              <p>
+                Alex Vega is a clever strategist who plans every move carefully.
+                His mysterious past makes him difficult to trust. But when
+                things get dangerous, he always has a plan.
+              </p>
+            </details>
+          </div>
+        </div>
+
+        <!-- CHARACTER 2 -->
+        <div class="character-card">
+          <div class="character-image">
+            <img src="./images/maya-cruz.png" alt="Maya Cruz - The Driver" />
+          </div>
+
+          <div class="character-info">
+            <h3>Maya Cruz</h3>
+
+            <p>Smart, bold and always one step ahead.</p>
+
+            <details class="character-details">
+              <summary>Learn More →</summary>
+
+              <p>
+                Maya Cruz is a fearless driver with sharp instincts. She is
+                confident, independent and always ready to take risks when the
+                situation demands it.
+              </p>
+            </details>
+          </div>
+        </div>
+
+        <!-- CHARACTER 3 -->
+        <div class="character-card">
+          <div class="character-image">
+            <img
+              src="./images/dante-reed.png"
+              alt="Dante Reed - The Enforcer"
+            />
+          </div>
+
+          <div class="character-info">
+            <h3>Dante Reed</h3>
+
+            <p>Power isn't given. It's earned.</p>
+
+            <details class="character-details">
+              <summary>Learn More →</summary>
+
+              <p>
+                Dante Reed is a tough and disciplined enforcer. He believes
+                respect is earned through actions, not words. Loyalty is
+                everything to him.
+              </p>
+            </details>
+          </div>
+        </div>
+
+        <!-- CHARACTER 4 -->
+        <div class="character-card">
+          <div class="character-image">
+            <img src="./images/nina-sol.png" alt="Nina Sol - The Wildcard" />
+          </div>
+
+          <div class="character-info">
+            <h3>Nina Sol</h3>
+
+            <p>Dream big. Play by your own rules.</p>
+
+            <details class="character-details">
+              <summary>Learn More →</summary>
+
+              <p>
+                Nina Sol is unpredictable, ambitious and adventurous. She lives
+                by her own rules and never backs down from a challenge.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MINI TOOLS SECTION -->
+    <section id="tools" class="tools-section">
+      <!-- SECTION HEADING -->
+      <div class="text-center mb-10">
+        <h2>MINI TOOLS</h2>
+
+        <p>𝐇𝐚𝐯𝐞 𝐬𝐨𝐦𝐞 𝐟𝐮𝐧 𝐰𝐡𝐢𝐥𝐞 𝐲𝐨𝐮 𝐞𝐱𝐩𝐥𝐨𝐫𝐞!</p>
+      </div>
+
+      <!-- TOOLS CARDS -->
+      <div class="tools-container">
+        <!-- CHARACTER QUIZ -->
+        <div class="tool-card quiz-card">
+          <div class="tool-icon">
+            <i class="fa-solid fa-gamepad"></i>
+          </div>
+
+          <div class="tool-content">
+            <h3>Character Quiz</h3>
+
+            <p>Which character are you?</p>
+
+            <button id="start-quiz" class="tool-btn" type="button">
+              Take Quiz →
+            </button>
+          </div>
+        </div>
+
+        <!-- HEIST GENERATOR -->
+        <div class="tool-card">
+          <div class="tool-icon">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+
+          <div class="tool-content">
+            <h3>Heist Generator</h3>
+
+            <p>Plan your next big mission!</p>
+
+            <button id="generate-heist" class="tool-btn" type="button">
+              Generate Heist →
+            </button>
+          </div>
+        </div>
+
+        <!-- WANTED LEVEL GAME -->
+        <div class="tool-card wanted-card">
+          <div class="tool-icon">
+            <i class="fa-solid fa-car-burst"></i>
+          </div>
+
+          <div class="tool-content">
+            <h3>Wanted Level</h3>
+
+            <p>How long can you survive?</p>
+
+            <button id="start-wanted" class="tool-btn" type="button">
+              Start Game →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUIZ AREA -->
+      <div id="quiz-area" class="quiz-area hidden">
+        <h3 id="quiz-question">Question</h3>
+
+        <div id="quiz-options"></div>
+
+        <button id="next-question" class="tool-btn" type="button">
+          Next →
+        </button>
+
+        <p id="quiz-result"></p>
+
+        <button id="restart-quiz" class="tool-btn hidden" type="button">
+          Try Again
+        </button>
+      </div>
+
+      <!-- HEIST RESULT AREA -->
+      <div id="heist-result" class="heist-area hidden">
+        <h3>
+          <i class="fa-solid fa-mask"></i>
+          YOUR HEIST MISSION
+        </h3>
+
+        <div class="heist-details">
+          <div>
+            <span>LOCATION</span>
+            <p id="heist-location">---</p>
+          </div>
+
+          <div>
+            <span>OBJECTIVE</span>
+            <p id="heist-objective">---</p>
+          </div>
+
+          <div>
+            <span>APPROACH</span>
+            <p id="heist-approach">---</p>
+          </div>
+
+          <div>
+            <span>ESTIMATED REWARD</span>
+            <p id="heist-reward">---</p>
+          </div>
+        </div>
+
+        <button id="regenerate-heist" class="tool-btn" type="button">
+          Generate Another →
+        </button>
+      </div>
+
+      <!-- WANTED LEVEL GAME AREA -->
+      <div id="wanted-game" class="wanted-game hidden">
+        <h3>WANTED LEVEL CHALLENGE</h3>
+
+        <p class="wanted-label">YOUR WANTED LEVEL</p>
+
+        <div id="wanted-stars" class="wanted-stars">☆ ☆ ☆ ☆ ☆</div>
+
+        <p id="wanted-status">Stay alert. Your challenge begins now.</p>
+
+        <p id="wanted-event"></p>
+
+        <p id="wanted-score">Survival Score: 0</p>
+
+        <button id="survive-btn" class="tool-btn" type="button">
+          Try to Escape →
+        </button>
+
+        <button id="restart-wanted" class="tool-btn hidden" type="button">
+          Play Again
+        </button>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <!-- BRAND -->
+        <div class="footer-brand">
+          <h2>
+            <i class="fa-solid fa-tree"></i>
+            Vice City
+          </h2>
+          <p>FAN HUB</p>
+          <p class="footer-description">
+            Explore the city. Meet the characters. Experience the neon
+            lifestyle.
+          </p>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <a href="#home">Home</a>
+          <a href="#characters">Cast</a>
+          <a href="#tools">Tools</a>
+        </div>
+
+        <!-- SOCIAL LINKS -->
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+
+          <div class="social-icons">
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a
+              href="https://www.youtube.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <a
+              href="https://x.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X"
+            >
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Vice City Fan Hub. Fan-made, unofficial project.</p>
+      </div>
+    </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button id="back-to-top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- JAVASCRIPT -->
+    <script src="./script.js"></script>
+  </body>
+</html>
